@@ -1,0 +1,9 @@
+# Publication Approval: local first-use report
+
+- Installed `mailschema` 0.3.2 with `npm install mailschema@0.3.2 --save-exact --ignore-scripts --no-audit --no-fund`. Runtime: Node v26.0.0; npm 11.12.1, checked using `node --version` and `npm --version`. npm cache and temporary files were on the SSD.
+- Ran `npx --no-install mailschema@0.3.2 contract publication-approval-0.1.json`, then `npx --no-install mailschema@0.3.2 description description.json --contract publication-approval-0.1.json`. Both exited 0. From install start to the first valid result: **0.82047 minutes** (49.228 seconds, monotonic clock).
+- Created an original synthetic workbench notebook entry, `content.md`, and its publication proposal. Its content digest hashes the exact UTF-8 file bytes. Reserved `.invalid` hosts are illustrative; no publication service was contacted or action executed.
+- Changed only `details.content.revision` to an empty string and reran the same description command. Exit 1; exact stderr: `/details/content/revision: must NOT have fewer than 1 characters`. Restored the original bytes and reran: exit 0 with the original description digest.
+- The slowest step was reviewing the schema and writing the original content/envelope: **46.16 seconds** between installation completion and contract checking. Installation took 1.832 seconds; first description validation took 0.315 seconds.
+- No defect found. I also ran `node canonical-check.mjs`: reversing top-level key order preserved canonical JSON and digest. Validity, rejection, restoration and canonicalization agreed with the installed README and [MailSchema tools](https://mailschema.org/tools); the [published README](https://www.npmjs.com/package/mailschema/v/0.3.2) describes the same CLI behavior.
+- I would add an optional JSON output mode containing validity, digest and error paths for scripts. This is a proposed convenience, not a claimed defect. Prepared with OpenAI Codex assistance.

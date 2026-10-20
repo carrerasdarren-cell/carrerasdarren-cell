@@ -1,0 +1,61 @@
+{
+  "@context": "https://mailschema.org/contexts/map-0.3.jsonld",
+  "@type": "MailAction",
+  "@id": "urn:uuid:87e24789-d10f-4a97-85db-233807423a12",
+  "profile": "https://mailschema.org/profiles/map/0.3",
+  "type": {
+    "id": "https://mailschema.org/types/publication-approval",
+    "version": "0.1",
+    "contractDigest": "sha-256:de91a49de4cba91209be253456e7c56709791fff877a060560d4eada0cc9468c"
+  },
+  "issuedAt": "2026-10-20T14:20:00Z",
+  "expiresAt": "2026-10-21T14:20:00Z",
+  "inLanguage": "en",
+  "service": {
+    "id": "https://bench-notes.example.invalid",
+    "tenant": "urn:uuid:a95d1366-59b9-4757-aa7e-f6f6f837c9ee"
+  },
+  "recipient": "editor@bench-notes.example.invalid",
+  "subject": {
+    "id": "urn:uuid:3341db72-ddb4-470e-b680-cb3526623f71",
+    "title": "Review the shared-workbench handoff note"
+  },
+  "terms": {
+    "id": "urn:uuid:6265df63-33d4-464c-b620-3d45a7713cf2",
+    "version": "bench-handoff-r1-public-now"
+  },
+  "details": {
+    "summary": "Publish the first immutable revision of my shared-workbench handoff note to the one public notebook destination listed here. No attachments, promotion, or subsequent revisions are included.",
+    "requester": "Bench Notes local author",
+    "content": {
+      "id": "urn:uuid:8bd95d19-ac49-4ce7-a3dc-ce2b514665ad",
+      "revision": "bench-handoff-r1",
+      "digest": "sha-256:61a6e0c8af5afc08dce2fa6fb70c97116a717cd0cc897a565ab1da707c8e5a40",
+      "title": "A quiet handoff for the shared workbench"
+    },
+    "destinations": [
+      {
+        "id": "https://bench-notes.example.invalid/notes/quiet-handoff",
+        "account": "urn:uuid:2da573e5-e3c6-4538-96bf-c47f0ccf453f",
+        "visibility": "public"
+      }
+    ],
+    "schedule": {
+      "mode": "immediate"
+    }
+  },
+  "operations": [
+    {
+      "id": "approve"
+    },
+    {
+      "id": "decline"
+    },
+    {
+      "id": "request-changes"
+    }
+  ],
+  "human": {
+    "url": "https://bench-notes.example.invalid/review/bench-handoff-r1"
+  }
+}
